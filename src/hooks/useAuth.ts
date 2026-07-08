@@ -43,7 +43,11 @@ export function useAuth() {
   async function signInWithGoogle() {
     await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin },
+      options: {
+        redirectTo: window.location.origin,
+        // 로그아웃 후 다시 로그인할 때 항상 같은 구글 계정으로 자동 로그인되지 않도록 계정 선택 화면을 강제한다.
+        queryParams: { prompt: 'select_account' },
+      },
     })
   }
 

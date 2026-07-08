@@ -145,7 +145,7 @@ function App() {
               />
             )}
 
-            <div className="flex justify-end items-center gap-2 bg-white/70 border border-stone-200 rounded-2xl px-4 py-3">
+            <div className="flex flex-wrap justify-end items-center gap-2 bg-white/70 border border-stone-200 rounded-2xl px-4 py-3">
               <span className="text-xs text-stone-400 mr-auto">내보내기</span>
               <TableCopyButton
                 weekKey={store.weekKey}
